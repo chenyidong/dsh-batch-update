@@ -1,0 +1,56 @@
+{
+  "name": "dsh-batch-update",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DSH 插件批量更新：在插件页新增「更新」标签，勾选可更新插件、选择更新源、任务式逐个更新，失败自动回滚到原版本。",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "plugin-update",
+    "batch",
+    "rollback"
+  ],
+  "license": "MIT",
+  "author": "chenyidong",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyidong/dsh-batch-update.git"
+  },
+  "homepage": "https://github.com/chenyidong/dsh-batch-update#readme",
+  "bugs": {
+    "url": "https://github.com/chenyidong/dsh-batch-update/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    },
+    "displayName": "插件批量更新",
+    "description": "插件页「更新」标签：勾选可更新插件、选择更新源、任务式逐个更新，失败自动回滚。",
+    "icon": "./icon.svg"
+  },
+  "engines": {
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  }
+}

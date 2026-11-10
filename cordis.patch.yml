@@ -1,0 +1,7 @@
+# Bundle patch layer: the host half is a no-op (all work goes through the
+# host's existing pluginManager remote RPC); `dsh.client` in package.json
+# loads ./client.js as the browser half that registers the `plugins.tab` seat.
+- insert:
+    - id: dsh-batch-update
+      name: dsh-batch-update
+      config: {}
